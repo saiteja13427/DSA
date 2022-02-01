@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Check if child string is a subsequence of a parentstring
+
 bool checkSubsets(string parent, string child)
 {
     int plen = parent.size();

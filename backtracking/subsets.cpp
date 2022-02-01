@@ -43,7 +43,7 @@ int main()
         cin >> input;
         char output[100];
         subsets(input, output, 0, 0);
-        //Lengthwise printing the subsets
+        // Lengthwise printing the subsets
         sort(subs.begin(), subs.end(), compare);
         for (int i = 0; i < subs.size(); i++)
         {
