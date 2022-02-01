@@ -30,14 +30,14 @@ char *mystrtok(char *s, char delim)
     }
     // At the end we put another null character, put input =NULL and return last token
     // After this it the function will return NULL to tell that we are at the end of the string
-    input[i] = '\0';
+    token[i] = '\0';
     input = NULL;
     return token;
 }
 
 int main()
 {
-    char s[1000] = "I am Sai Teja";
+    char s[1000] = "I am Sai Teja, what are you dioing?";
 
     char *a = mystrtok(s, ' ');
     while (a)
