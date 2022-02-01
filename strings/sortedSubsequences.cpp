@@ -10,28 +10,23 @@ bool compare(string a, string b)
         return a < b;
     return a.length() < b.length();
 }
-void sortedSubsequences(char *input, char seq[], int i, int j)
+void sortedSubsequences(string input, string output)
 {
-    if (input[i] == '\0')
+    if (input.size() == 0)
     {
-        if (j != 0)
-        {
-            seq[j] = '\0';
-            string s = seq;
-            subseq.push_back(s);
-        }
+        subseq.push_back(output);
         return;
     }
-    seq[j] = input[i];
-    sortedSubsequences(input, seq, i + 1, j + 1);
-    sortedSubsequences(input, seq, i + 1, j);
+    char c = input[0];
+    input = input.substr(1);
+    sortedSubsequences(input, output + c);
+    sortedSubsequences(input, output);
 }
 
 int main()
 {
-    char input[] = "abcd";
-    char seq[strlen(input) + 1];
-    sortedSubsequences(input, seq, 0, 0);
+    string input = "abcd";
+    sortedSubsequences(input, "");
     sort(begin(subseq), end(subseq), compare);
     for (string str : subseq)
         cout << str << endl;
